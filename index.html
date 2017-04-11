@@ -202,6 +202,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -325,17 +335,6 @@
 
           
             
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2017/04/10/blog-build-via-Github-Page/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://yoursite.com/2017/04/10/blog-build-via-Github-Page/" class="cy_cmt_count" data-xid="2017/04/10/blog-build-via-Github-Page/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
           
 
           
@@ -359,28 +358,14 @@
 
       
         
-          
-            <p>使用Github Page可以很方便快速的搭建属于自己的博客，关于这方面的介绍网上已经有相当多的教程可以参考。需要注意的一些地方是，Github Page的某些策略已经发生了改变，因此要参照网上最新的教程。推荐以下这两篇：</p>
-<p>1.<a href="http://www.jianshu.com/p/834d7cc0668d" target="_blank" rel="external">http://www.jianshu.com/p/834d7cc0668d</a><br>2.<a href="http://www.jianshu.com/p/169aa8765b3f" target="_blank" rel="external">http://www.jianshu.com/p/169aa8765b3f</a></p>
-<p><strong>总的流程如下：</strong></p>
-<p>1.安装Node.js(如果已经安装，可略过）；<br>2.注册并安装Github客户端(如果已经安装，可略过）；<br>3.新建个人Repository，Clone到本地；<br>4.安装hexo；<br>5.使用hexo init命令初始化；<br>6.cd到项目文件夹，安装包依赖；<br>7.安装主题（可选）；<br>8.安装hexo-deployer-git；<br>9.部署项目到Github；</p>
-<p>经过以上几个步骤，一个个人博客就算是搭建好了，虽然看起来略繁琐，如果熟悉的话操作起来相对还是很简单顺畅的。但是对于一个小白来说，还是很容易碰到一些坑的，我花了一天时间才算是搭建好，这里分享一下我踩的那些坑。</p>
-<h3 id="1-添加git命令到环境变量"><a href="#1-添加git命令到环境变量" class="headerlink" title="1.添加git命令到环境变量"></a>1.添加git命令到环境变量</h3><p>如果在hexo init初始化的时候报错：</p>
-<pre><code>&apos;git&apos; 不是内部或外部命令，也不是可运行的程序或批处理文件。
-</code></pre><p>则需要手动添加git到环境变量中，方法如下：</p>
-<p>1.打开环境变量编辑面板，在“编辑用户环境变量”一栏中，选中变量为“PATH”的那一栏，点击编辑，点击新建，将Github安装路径中的以下连个路径添加进去。</p>
-<pre><code>usr\bin 和 libexec\git-core
-</code></pre><p>以win10(64bit)为例，找到Github安装路径，路径分别如下</p>
-<pre><code>C:\Users\Administrator\AppData\Local\GitHub\PortableGit_f02737a78695063deace08e96d5042710d3e32db\usr\bin;
-C:\Users\Administrator\AppData\Local\GitHub\PortableGit_f02737a78695063deace08e96d5042710d3e32db\mingw32\libexec\git-core;
-</code></pre><h3 id="2-代码部署到Github"><a href="#2-代码部署到Github" class="headerlink" title="2.代码部署到Github"></a>2.代码部署到Github</h3><p>如果在执行 <code>hexo g -d</code>后提示：</p>
-<pre><code>src refspec HEAD does not match any.
-</code></pre><p>可能原因为当前还未创建分支，打开Github客户端，选中一个文件，尝试Commit操作，如果这个Commit成功，再进行<code>hexo g -d</code>部署操作。</p>
-<p><strong>注意：</strong>无须手动将本地代码Commit到Github中去，使用<code>hexo g -d</code>命令，<code>hexo</code>会自动将特定的文件Commit到Github中，手动Commit默认无法忽略node包依赖文件，导致Commit失败。</p>
-<h3 id="3-将Github-Page绑定到你个人域名"><a href="#3-将Github-Page绑定到你个人域名" class="headerlink" title="3.将Github Page绑定到你个人域名"></a>3.将Github Page绑定到你个人域名</h3><p>虽然能很便宜的买到一些域名，但不花钱的域名还是更令人开心的，在<a href="http://www.dot.tk/zh/index.html可申请到一个免费的tk域名，并将此域名绑定到你的Github" target="_blank" rel="external">http://www.dot.tk/zh/index.html可申请到一个免费的tk域名，并将此域名绑定到你的Github</a> Page。</p>
-<p>申请注册tk域名之后，按照教程ping你的Github Page得到你的Github Page ip<br><strong>注意：</strong>得到的这个ip地址直接访问是指向一个404页面的，但是对绑定域名并不影响。</p>
-
-          
+          <p>使用Github Page可以很方便快速的搭建属于自己的博客，关于这方面的介绍网上已经有相当多的教程可以参考。需要注意的一些地方是，Github Page的某些策略已经发生了改变，因此要参照网上最新的教程。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/10/blog-build-via-Github-Page/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -652,10 +637,6 @@ C:\Users\Administrator\AppData\Local\GitHub\PortableGit_f02737a78695063deace08e9
 
 
 
-
-  
-    <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cysWk0GPI"></script>
-  
 
 
 
