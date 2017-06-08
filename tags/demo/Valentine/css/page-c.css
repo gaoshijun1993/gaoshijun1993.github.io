@@ -1,0 +1,228 @@
+.page-c{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.c-background-top, .c-background-middle, .c-background-bottom{
+  background-size: 100% 100%;
+}
+.c-background-top{
+  width: 100%;
+  height: 71.59%;
+  background-image: url('../images/c-background-top.png');
+  /*background-size: 100% 100%;*/
+}
+#girl{
+  position: absolute;
+  z-index: 1001;
+  height: 13%;
+  background-image: url(../images/girl.png);
+  background-size: 700% 100%;
+  background-position: -100% 0;
+}
+.girl-rotate{
+  animation-name:girl-rotate;
+  animation-duration: 850ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: step-start;
+}
+/*当animation-timing-function设置为：step-start时，0%的帧不生效；*/
+@keyframes girl-rotate {
+  0% {
+      background-position: -400% 0;
+  }
+  16.7% {
+      background-position: -100% 0;
+  }
+  33.4% {
+      background-position: -600% 0;
+  }
+  50.1% {
+      background-position: 0 0;
+  }
+  66.8% {
+      background-position: -200% 0;
+  }
+  83.5% {
+      background-position: -300% 0;
+  }
+  100% {
+      background-position: -400% 0;
+  }
+}
+.c-background-middle{
+  width: 100%;
+  height: 13.10%;
+  background-image: url('../images/c-background-middle.png');
+  /*background-size: 100% 100%;*/
+}
+.c-background-bottom{
+  width: 100%;
+  height: 15.31%;
+  position: relative;
+  background-image: url('../images/c-background-bottom.png');
+  /*background-size: 100% 100%;*/
+}
+.star{
+  position: absolute;
+  background-image: url(../images/star.png);
+  background-size: 100% 100%;
+  width: 2%;
+  animation-name: star-twinkle;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+.star1{
+  left:20%;
+  top:20%;
+  animation-delay: 100ms;
+}
+.star2{
+  left:23%;
+  top:25%;
+  animation-delay: 2s;
+}
+.star3{
+  left:25%;
+  top:40%;
+  animation-delay: 3s;
+}
+.star4{
+  left:75%;
+  top:23%;
+  animation-delay: 4s;
+}
+.star5{
+  left:89%;
+  top:33%;
+  animation-delay: 5s;
+}
+.star6{
+  left:77%;
+  top:31%;
+  animation-delay: 6s;
+}
+@keyframes star-twinkle {
+  0%{
+    opacity:1;
+  }
+  50%{
+    opacity: 0.1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.wave{
+  background-image: url(../images/wave.png);
+  background-size: 100% 100%;
+  position: absolute;
+}
+.wave1{
+  width: 5%;
+  left: 34%;
+  /*left:65%;*/
+  top:5%;
+  animation-name: wave1;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+.wave2{
+  width: 15%;
+  left: 33.5%;
+  /*left:56%;*/
+  top:17%;
+  animation-name: wave2;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+}
+.wave3{
+  width: 10%;
+  left: 32%;
+  /*left:63%;*/
+  top:50%;
+  animation-name: wave3;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+.wave4{
+  width: 15%;
+  left: 31%;
+  /*left:59%;*/
+  top:70%;
+  animation-name: wave4;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-delay: 5s;
+}
+@keyframes wave1 {
+  0%{
+    left: 34%;
+  }
+  50%{
+    left: 65%;
+  }
+  100%{
+    left: 34%;
+  }
+}
+@keyframes wave2 {
+  0%{
+    left: 33.5%;
+  }
+  50%{
+    left: 56%;
+  }
+  100%{
+    left: 33.5%;
+  }
+}
+@keyframes wave3 {
+  0%{
+    left: 32%;
+  }
+  50%{
+    left: 63%;
+  }
+  100%{
+    left: 32%;
+  }
+}
+@keyframes wave4 {
+  0%{
+    left: 31%;
+  }
+  50%{
+    left: 59%;
+  }
+  100%{
+    left: 31%;
+  }
+}
+
+#flowerRainWrapper{
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#flowerRainWrapper .petalRotate{
+  animation-name: petalRotate;
+  animation-duration: 20s;
+}
+@keyframes petalRotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(360deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}

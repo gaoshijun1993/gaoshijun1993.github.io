@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/page-a.css">
+    <link rel="stylesheet" href="css/page-b.css">
+    <link rel="stylesheet" href="css/page-c.css">
+    <script src="js/jquery-3.2.1.min.js" charset="utf-8"></script>
+    <script src="js/transit.js" charset="utf-8"></script>
+
+
+  </head>
+  <body>
+    <div id="content-wrapper">
+      <ul class="content">
+
+        <!-- 页面1 -->
+        <li>
+          <div class="page-a">
+            <div class="a-background-top"></div>
+            <div class="a-background-middle" id="road"></div>
+            <div class="a-background-bottom"></div>
+          </div>
+          <div id="sun"></div>
+          <div id="cloud1"></div>
+          <div id="cloud2"></div>
+        </li>
+
+        <!-- 页面2 -->
+        <li class="li-2">
+          <div class="page-b">
+            <div class="b-background">
+
+            </div>
+            <div class="door">
+              <div class="door-left" id='doorLeft'>
+
+              </div>
+              <div class="door-right" id='doorRight'>
+
+              </div>
+            </div>
+            <div class="b-background-preload"></div>
+            <div class="bird"></div>
+          </div>
+        </li>
+
+        <!-- 页面3 -->
+        <li>
+          <div class="page-c">
+            <div class="c-background-top">
+              <div id="girl">
+              </div>
+            </div>
+            <div class="c-background-middle"></div>
+            <div class="c-background-bottom">
+              <div class="wave wave1"></div>
+              <div class="wave wave2"></div>
+              <div class="wave wave3"></div>
+              <div class="wave wave4"></div>
+            </div>
+            <div class="star star1"></div>
+            <div class="star star2"></div>
+            <div class="star star3"></div>
+            <div class="star star4"></div>
+            <div class="star star5"></div>
+            <div class="star star6"></div>
+            <div id="flowerRainWrapper">
+
+            </div>
+          </div>
+          <!-- 花雨层 -->
+
+        </li>
+      </ul>
+
+      <div class="charactor" id="boy">
+      </div>
+    </div>
+
+    </div>
+    <!-- <button id='button' type="button" name="button" style="font-size:30px;position:fixed;left:50%;z-index:1000;">boy-walk</button> -->
+  </body>
+  <script src="js/index.js" charset="utf-8"></script>
+  <script src="js/Swipe.js" charset="utf-8"></script>
+  <script src="js/boyWalk.js" charset="utf-8"></script>
+  <script src="js/doorAction.js" charset="utf-8"></script>
+
+  <script type="text/javascript">
+    var boy=boyWalk();
+    var $btn=$('#button');
+    var $container=$('#content-wrapper');
+    var swipe=Swipe($container);
+    var $doorLeft=$('#doorLeft');
+    var $doorRight=$('#doorRight');
+    var doorAction=DoorAction();
+
+    var audioConfig={
+      enable:true,
+      playUrl:{
+        // 可以将音乐分段,增加灵活性;
+        config1:'./music/happy.mp3',
+        config2:'./music/circulation.mp3',
+        part1:'./music/part1.mp3',
+        part2:'./music/part2.mp3',
+        part3:'./music/part2.mp3',
+        part4:'./music/part2.mp3',
+        part5:'./music/part2.mp3',
+      },
+    }
+
+    // 音乐播放控制
+    function audioPlay(url,isLoop,callback) {
+      var audio=new Audio(url);
+      audio.autoPlay=true;
+      audio.loop=isLoop||false;
+      audio.play();
+      return audio
+    }
+    var audioPlay1=audioPlay(audioConfig.playUrl.config1);
+    audioPlay1.addEventListener('ended',function () {
+      audioPlay(audioConfig.playUrl.config2);
+    });
+
+    boy.walkTo(2000,0.2)
+      .then(function () {
+        return swipe.scrollTo($container.width(),4000);
+      })
+      //注意：如果页面滑动未完成时便开始boy.intoShop，需要在intoShop中的shopDist中减去页面滑动的距离；
+      .then(function () {
+        birdFly();
+        return boy.walkTo(2000,0.56);
+      })
+      .then(function () {
+        boy.pauseWalk();
+        return doorAction.open();
+      })
+      .then(function () {
+        return boy.intoShop(10);
+      })
+      .then(function () {
+        return boy.getFlower();
+      })
+      .then(function () {
+        return boy.outShop();
+      })
+      .then(function () {
+        boy.pauseWalk();
+        return doorAction.close();
+      })
+      .then(function () {
+        boy.walkTo(2000,0.1);
+        return swipe.scrollTo($container.width()*2,2000);
+      })
+      .then(function () {
+        console.log($container.height());
+        return boy.ontoBridge(1500,2000,2000);
+      })
+      .then(function () {
+        //boy.pauseWalk();
+        boy.rotate();
+        girl.rotate();
+      })
+
+
+  </script>
+
+</html>

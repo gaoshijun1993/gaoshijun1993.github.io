@@ -1,0 +1,190 @@
+#content-wrapper{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.content{
+  width: 300%;
+  height: 100%;
+  font-size: 0;
+  position: absolute;
+  z-index: 0;
+}
+.content li{
+  width: 33.3%;
+  height: 100%;
+  display: inline-block;
+}
+
+.page-a{
+  width: 100%;
+  height: 100%;
+}
+.a-background-top,.a-background-middle,.a-background-bottom{
+  background-repeat: no-repeat;
+  /*使背景图像完全覆盖背景区域*/
+  background-size: cover;
+}
+.a-background-top{
+  width: 100%;
+  height: 71.6%;
+  background-image: url('../images/a-background-top.png');
+}
+.a-background-middle{
+  width: 100%;
+  height: 13.1%;
+  background-image: url('../images/a-background-middle.png');
+}
+.a-background-bottom{
+  width: 100%;
+  height: 15.3%;
+  background-image: url('../images/a-background-bottom.png');
+}
+
+#boy{
+  position: absolute;
+  z-index: 10001;
+  height: 15%;
+  background-image: url('../images/boy.png');
+  /*雪碧图中横向排列了7个boy，纵向排列了2个boy，所以width:700%,height：200%；*/
+  background-size: 700% 200%;
+  background-position: 0 -100%;
+  top:0;
+  left: 0;
+  /*transform: translateY(0%);*/
+}
+.slow-walk{
+  animation-name: slow-walk;
+  animation-duration: 950ms;
+  animation-timing-function: step-start;
+  animation-iteration-count: infinite;
+}
+@keyframes slow-walk {
+  0% {background-position: 0 -100%;}
+  25% {background-position: -100% -100%;}
+  50% {background-position: -400% 0;}
+  75% {background-position: -200% -100%;}
+  100% {background-position: 0 -100%;}
+}
+/*进商店买花*/
+.get-flower-walk{
+  animation-name: get-flower-walk;
+  animation-duration: 950ms;
+  animation-timing-function: step-start;
+  animation-iteration-count: infinite;
+}
+@keyframes get-flower-walk {
+  0% {background-position: -200% 0;}
+  25% {background-position: -300% 0;}
+  50% {background-position: -500% 0;}
+  75% {background-position: -300% 0;}
+  100% {background-position: -100% 0;}
+}
+.boy-rotate{
+  animation-name: boy-rotate;
+  animation-duration: 850ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: step-start;
+  animation-iteration-count: 1;
+}
+@keyframes boy-rotate {
+   0% {
+       background-position: -603px -100%;
+   }
+   16.7% {
+       background-position: -100% 0;
+   }
+   33.4% {
+       background-position: -300% -100%;
+   }
+   50.1% {
+       background-position: 0 0;
+   }
+   66.8% {
+       background-position: -600% -100%;
+   }
+   83.5% {
+       background-position: -500% -100%;
+   }
+   100% {
+       background-position: -400% -100%;
+   }
+}
+.sun-wrapper{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+/*太阳位置通过js控制*/
+#sun{
+  position: absolute;
+  z-index: 300;
+  top: 0;
+  left:15%;
+  background-image: url(../images/sun.png);
+}
+.sun-rotation{
+  animation-name: sun-rotation;
+  animation-duration: 10s;
+}
+@keyframes sun-rotation {
+  0%{
+    transform: translate(0,0);
+  }
+  100%{
+    transform: translate(-500%,300%);
+  }
+}
+
+#cloud1,#cloud2{
+  position: absolute;
+  z-index: 301;
+}
+#cloud1{
+  background-image: url(../images/cloud1.png);
+  background-size: 100% 100%;
+  top:2%;
+  left:0%;
+}
+#cloud2{
+  background-image: url(../images/cloud2.png);
+  background-size: 100% 100%;
+  top:10%;
+  left:20%;
+}
+.cloud1-anim{
+  animation-name: cloud1-anim;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+.cloud2-anim{
+  animation-name: cloud2-anim;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes cloud1-anim {
+  0%{
+    left:0%;
+  }
+  50%{
+    left:20%;
+  }
+  100%{
+    left:0%;
+  }
+}
+@keyframes cloud2-anim {
+  0%{
+    left:20%;
+  }
+  50%{
+    left:0%;
+  }
+  100%{
+    left:20%;
+  }
+}
