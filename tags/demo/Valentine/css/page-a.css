@@ -127,14 +127,14 @@
 }
 .sun-rotation{
   animation-name: sun-rotation;
-  animation-duration: 10s;
+  animation-duration: 20s;
 }
 @keyframes sun-rotation {
   0%{
     transform: translate(0,0);
   }
   100%{
-    transform: translate(-500%,300%);
+    transform: translate(-500%,30%);
   }
 }
 
@@ -156,13 +156,13 @@
 }
 .cloud1-anim{
   animation-name: cloud1-anim;
-  animation-duration: 10s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
 }
 .cloud2-anim{
   animation-name: cloud2-anim;
-  animation-duration: 10s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
 }
