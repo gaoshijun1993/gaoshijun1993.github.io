@@ -89,82 +89,83 @@
   <script src="js/doorAction.js" charset="utf-8"></script>
 
   <script type="text/javascript">
-    var boy=boyWalk();
-    var $btn=$('#button');
-    var $container=$('#content-wrapper');
-    var swipe=Swipe($container);
-    var $doorLeft=$('#doorLeft');
-    var $doorRight=$('#doorRight');
-    var doorAction=DoorAction();
+    $(window).load(function () {
+      var boy=boyWalk();
+      var $btn=$('#button');
+      var $container=$('#content-wrapper');
+      var swipe=Swipe($container);
+      var $doorLeft=$('#doorLeft');
+      var $doorRight=$('#doorRight');
+      var doorAction=DoorAction();
 
-    var audioConfig={
-      enable:true,
-      playUrl:{
-        // 可以将音乐分段,增加灵活性;
-        config1:'./music/happy.mp3',
-        config2:'./music/circulation.mp3',
-        part1:'./music/part1.mp3',
-        part2:'./music/part2.mp3',
-        part3:'./music/part2.mp3',
-        part4:'./music/part2.mp3',
-        part5:'./music/part2.mp3',
-      },
-    }
+      var audioConfig={
+        enable:true,
+        playUrl:{
+          // 可以将音乐分段,增加灵活性;
+          config1:'./music/happy.mp3',
+          config2:'./music/circulation.mp3',
+          part1:'./music/part1.mp3',
+          part2:'./music/part2.mp3',
+          part3:'./music/part2.mp3',
+          part4:'./music/part2.mp3',
+          part5:'./music/part2.mp3',
+        },
+      }
 
-    // 音乐播放控制
-    function audioPlay(url,isLoop,callback) {
-      var audio=new Audio(url);
-      audio.autoPlay=true;
-      audio.loop=isLoop||false;
-      audio.play();
-      return audio
-    }
-    var audioPlay1=audioPlay(audioConfig.playUrl.config1);
-    audioPlay1.addEventListener('ended',function () {
-      audioPlay(audioConfig.playUrl.config2);
-    });
+      // 音乐播放控制
+      function audioPlay(url,isLoop,callback) {
+        var audio=new Audio(url);
+        audio.autoPlay=true;
+        audio.loop=isLoop||false;
+        audio.play();
+        return audio
+      }
+      var audioPlay1=audioPlay(audioConfig.playUrl.config1);
+      audioPlay1.addEventListener('ended',function () {
+        audioPlay(audioConfig.playUrl.config2);
+      });
 
-    boy.walkTo(2000,0.2)
-      .then(function () {
-        return swipe.scrollTo($container.width(),4000);
-      })
-      //注意：如果页面滑动未完成时便开始boy.intoShop，需要在intoShop中的shopDist中减去页面滑动的距离；
-      .then(function () {
-        birdFly();
-        return boy.walkTo(2000,0.56);
-      })
-      .then(function () {
-        boy.pauseWalk();
-        return doorAction.open();
-      })
-      .then(function () {
-        return boy.intoShop(10);
-      })
-      .then(function () {
-        return boy.getFlower();
-      })
-      .then(function () {
-        return boy.outShop();
-      })
-      .then(function () {
-        boy.pauseWalk();
-        return doorAction.close();
-      })
-      .then(function () {
-        boy.walkTo(2000,0.1);
-        return swipe.scrollTo($container.width()*2,2000);
-      })
-      .then(function () {
-        console.log($container.height());
-        return boy.ontoBridge(1500,2000,2000);
-      })
-      .then(function () {
-        //boy.pauseWalk();
-        boy.rotate();
-        girl.rotate();
-      })
-
-
+      boy.walkTo(2000,0.2)
+        .then(function () {
+          return swipe.scrollTo($container.width(),4000);
+        })
+        //注意：如果页面滑动未完成时便开始boy.intoShop，需要在intoShop中的shopDist中减去页面滑动的距离；
+        .then(function () {
+          birdFly();
+          return boy.walkTo(2000,0.56);
+        })
+        .then(function () {
+          boy.pauseWalk();
+          return doorAction.open();
+        })
+        .then(function () {
+          return boy.intoShop(10);
+        })
+        .then(function () {
+          return boy.getFlower();
+        })
+        .then(function () {
+          return boy.outShop();
+        })
+        .then(function () {
+          boy.pauseWalk();
+          return doorAction.close();
+        })
+        .then(function () {
+          boy.walkTo(2000,0.1);
+          return swipe.scrollTo($container.width()*2,2000);
+        })
+        .then(function () {
+          console.log($container.height());
+          return boy.ontoBridge(1500,2000,2000);
+        })
+        .then(function () {
+          //boy.pauseWalk();
+          boy.rotate();
+          girl.rotate();
+        })
+    })
+    
   </script>
 
 </html>
