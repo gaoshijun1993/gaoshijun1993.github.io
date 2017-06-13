@@ -1,0 +1,113 @@
+.container{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 1060px;
+  margin: 6px auto;
+}
+.container .side-bar{
+  box-sizing: border-box;
+  width: 25%;
+  padding: 20px 10px;
+  border-radius: 6px 0 0 6px;
+  background-color: rgb(0, 186, 255);
+}
+.container .side-bar .personal-info{
+  width: 100%;
+}
+.container .side-bar .personal-info .avatar{
+  width: 100px;
+  margin:0 auto;
+}
+.container .side-bar .personal-info .avatar img{
+  width: 100%;
+}
+.container .side-bar .personal-info .details{
+  margin-top: 100px;
+  margin-left: 20px;
+  color: #e4e4e4;
+}
+.container .side-bar .personal-info .details dt{
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.container .side-bar .personal-info .details dt .fa-bookmark{
+  margin-right: 4px;
+}
+.container .side-bar .personal-info .details dd{
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.container .side-bar .personal-info .details .mail a{
+  color: #e4e4e4;
+}
+.container .side-bar .personal-info .details .about-me{
+  line-height: 20px;
+  word-break: break-all;
+}
+.container .side-bar .personal-info .details dd i{
+  margin-right: 4px;
+}
+.container .content{
+  box-sizing: border-box;
+  width: 75%;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 0 6px 6px 0;
+  padding: 0 10px 30px 10px;
+}
+.container .content .main>dt{
+  font-size: 1.5em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: rgb(0, 186, 255);
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(0, 186, 255,0.5);
+}
+.container .content .main>dt .fa-bookmark{
+  margin-right: 4px;
+}
+.container .content .main dd{
+  margin-left: 20px;
+  line-height: 20px;
+}
+.container .content .main strong{
+  font-weight: bold;
+}
+.container .content .main h2{
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container .content .main h2 .fa-circle{
+  color: rgb(0, 186, 255);
+  margin-right: 0.5em;
+}
+.container .content .main h3{
+  margin-left: 2em;
+  margin-top: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.container .content .main p{
+  margin-left: 3em;
+  font-size: 1em;
+  font-weight: normal;
+}
+.container .content .main a{
+  color: inherit;
+}
+footer{
+  margin-top: 100px;
+}
+footer .container{
+  display: flex;
+  justify-content: center;
+}
+footer .container .download{
+  margin: 0 1em;
+  color: rgba(179, 22, 15, 0.61);
+  text-decoration: none;
+}
