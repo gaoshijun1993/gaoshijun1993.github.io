@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="今天上午的面试是我的第二次前端面试，问的全都是技术问题，并且都是我没有准备过的，被狠狠地打击了，特此总结了一下面试题目。">
+<meta name="description" content="今天上午的面试是我的第二次前端面试，问的技术问题有几个都是我没有准备过的，特此总结了一下面试题目。">
 <meta name="keywords" content="面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2017.6.21日面试总结">
 <meta property="og:url" content="http://yoursite.com/2017/06/21/2017.6.21日面试总结/index.html">
 <meta property="og:site_name" content="浮生若梦">
-<meta property="og:description" content="今天上午的面试是我的第二次前端面试，问的全都是技术问题，并且都是我没有准备过的，被狠狠地打击了，特此总结了一下面试题目。">
-<meta property="og:updated_time" content="2017-06-21T13:35:21.299Z">
+<meta property="og:description" content="今天上午的面试是我的第二次前端面试，问的技术问题有几个都是我没有准备过的，特此总结了一下面试题目。">
+<meta property="og:updated_time" content="2017-06-23T00:49:09.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017.6.21日面试总结">
-<meta name="twitter:description" content="今天上午的面试是我的第二次前端面试，问的全都是技术问题，并且都是我没有准备过的，被狠狠地打击了，特此总结了一下面试题目。">
+<meta name="twitter:description" content="今天上午的面试是我的第二次前端面试，问的技术问题有几个都是我没有准备过的，特此总结了一下面试题目。">
 
 
 
@@ -354,7 +354,7 @@
       
 
       
-        <p>今天上午的面试是我的第二次前端面试，问的全都是技术问题，并且都是我没有准备过的，被狠狠地打击了，特此总结了一下面试题目。<a id="more"></a></p>
+        <p>今天上午的面试是我的第二次前端面试，问的技术问题有几个都是我没有准备过的，特此总结了一下面试题目。<a id="more"></a></p>
 <p>#1.解释下工厂模式？<br>工厂模式是软件工程领域一种广为人知的的设计模式，这种模式抽象了创建具体对象的过程。考虑到在ECMAScript中无法创建类，开发人员就发明了一种函数，用函数来封装以特定接口创建对象的细节；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function createPerson (name,age,job)&#123;</div><div class="line">     var o = new Object();</div><div class="line">     o.name=name;</div><div class="line">     o.age=age;</div><div class="line">     o.sayName=function()&#123;</div><div class="line">          alert(this.name);</div><div class="line">     &#125;</div><div class="line">     return o;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>#2.解释下对象模式？<br>找遍了《js高级程序设计》这本书，并没有找到“对象模式”这个词的相关解释，因此我推测为面试官表述的有误，可能想表达的是构造函数模式？<br>构造函数模式：<br>与工厂模式的区别：</p>
 <pre><code>1. 没有显式的创建对象；
